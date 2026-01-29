@@ -1,0 +1,39 @@
+# STL Detector ROS 2 Parameters
+# Copy this file to your workspace and modify as needed
+
+stl_detector_node:
+  ros__parameters:
+    # Path to trained YOLO model
+    # Leave empty to use default: runs/detect/stl_object/weights/best.pt
+    model_path: ""
+    
+    # Detection confidence threshold (0.0 - 1.0)
+    # Higher = fewer false positives, lower = more detections
+    confidence_threshold: 0.65
+    
+    # IOU threshold for non-maximum suppression
+    iou_threshold: 0.45
+    
+    # Maximum number of detections to process per frame
+    max_detections: 10
+    
+    # Whether to publish TF transforms for detected objects
+    # Enable for robot arm integration
+    publish_tf: true
+    
+    # Camera optical frame name (used for TF)
+    # For RealSense: camera_color_optical_frame
+    # For other cameras: check your camera's TF tree
+    camera_frame: "camera_color_optical_frame"
+    
+    # Prefix for detected object TF frames
+    # Objects will be published as: detected_object_0, detected_object_1, etc.
+    detection_frame_prefix: "detected_object_"
+    
+    # Show all detections (false = only best detection highlighted)
+    show_all_detections: false
+    
+    # CRITICAL: Only detect these specific classes
+    # Any other classes will be IGNORED even if model detects them
+    # This prevents "detects all objects" issue
+    allowed_classes: ["bottle", "mouse"]

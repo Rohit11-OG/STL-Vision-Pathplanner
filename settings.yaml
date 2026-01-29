@@ -1,0 +1,69 @@
+# STL Object Detection System - Settings
+# Edit this file to customize behavior without code changes
+
+# =============================================================================
+# DETECTION SETTINGS
+# =============================================================================
+detection:
+  # Confidence threshold (0.0 - 1.0)
+  confidence: 0.65
+  
+  # IOU threshold for NMS
+  iou_threshold: 0.45
+  
+  # Maximum detections per frame
+  max_detections: 10
+
+# =============================================================================
+# PATH PLANNING SETTINGS
+# =============================================================================
+path_planning:
+  # Strategy: contour, approach, grid, surface, spiral, zigzag
+  strategy: contour
+  
+  # Number of waypoints
+  num_waypoints: 20
+  
+  # Travel velocity (m/s)
+  velocity: 0.1
+  
+  # Safety offset from surface (m)
+  surface_offset: 0.02
+  
+  # Approach distance for pick operations (m)
+  approach_distance: 0.05
+
+# =============================================================================
+# COLLISION AVOIDANCE
+# =============================================================================
+collision:
+  # Enable collision checking
+  enabled: true
+  
+  # Minimum clearance (m)
+  min_clearance: 0.03
+
+# =============================================================================
+# VISUALIZATION
+# =============================================================================
+visualization:
+  # Show path overlay
+  show_path: true
+  
+  # Show FPS counter
+  show_fps: true
+  
+  # Show depth info
+  show_depth: true
+
+# =============================================================================
+# CAMERA SETTINGS
+# =============================================================================
+camera:
+  # Use RealSense (true) or OpenCV webcam (false)
+  use_realsense: true
+  
+  # Camera resolution
+  width: 640
+  height: 480
+  fps: 30

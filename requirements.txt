@@ -1,0 +1,34 @@
+# STL Object Detection System - Requirements
+# Install with: pip install -r requirements.txt
+
+# Core dependencies
+numpy>=1.21.0
+opencv-python>=4.6.0
+
+# 3D mesh processing
+trimesh>=3.15.0
+numpy-stl>=2.17.0
+
+# 3D rendering
+pyrender>=0.1.45
+PyOpenGL>=3.1.5
+PyOpenGL-accelerate>=3.1.5
+
+# For headless rendering (choose one based on your system)
+# osmesa or egl backend
+# On Ubuntu: sudo apt-get install libosmesa6-dev freeglut3-dev
+
+# Deep learning
+torch>=1.10.0
+torchvision>=0.11.0
+ultralytics>=8.0.0
+
+# RealSense camera
+pyrealsense2>=2.50.0
+
+# Progress bar
+tqdm>=4.62.0
+
+# Optional: for better training visualization
+# tensorboard>=2.8.0
+# matplotlib>=3.5.0
