@@ -1,165 +1,172 @@
-# 🚀 STL Vision PathPlanner
-
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg?style=for-the-badge&logo=python&logoColor=white)
-![YOLO](https://img.shields.io/badge/YOLOv8-Ultralytics-00FFFF.svg?style=for-the-badge&logo=yolo&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green.svg?style=for-the-badge&logo=opencv&logoColor=white)
-![ROS2](https://img.shields.io/badge/ROS2-Humble-orange.svg?style=for-the-badge&logo=ros&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
+<!-- Animated Header -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=300&section=header&text=🚀%20STL%20Vision%20PathPlanner&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=35&desc=From%20CAD%20to%20Camera%20to%20Robot%20—%20All%20in%20One!&descAlignY=55&descSize=20"/>
 
-<h3>🎯 Transform 3D STL Models into Real-Time Object Detection & Robotic Tool Paths</h3>
+<!-- Typing Animation -->
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=800&height=100&lines=🤖+Transform+3D+Models+into+Robotic+Paths;🧠+AI-Powered+Real-Time+Detection" alt="Typing SVG" /></a>
 
-<p><i>From CAD to Camera to Robot — All in One Pipeline! 🤖</i></p>
+<!-- Animated Badges -->
+<p>
+<img src="https://img.shields.io/badge/Python-3.8+-FFD43B?style=for-the-badge&logo=python&logoColor=blue&labelColor=black"/>
+<img src="https://img.shields.io/badge/YOLOv8-Ultralytics-FF6F61?style=for-the-badge&logo=yolo&logoColor=white&labelColor=black"/>
+<img src="https://img.shields.io/badge/OpenCV-Real--Time-00FF00?style=for-the-badge&logo=opencv&logoColor=white&labelColor=black"/>
+<img src="https://img.shields.io/badge/ROS2-Robot%20Ready-FF6600?style=for-the-badge&logo=ros&logoColor=white&labelColor=black"/>
+</p>
 
-[Features](#-features) • [Demo](#-demo) • [Installation](#-installation) • [Usage](#-usage) • [ROS2](#-ros2-integration) • [Contributing](#-contributing)
+<!-- Activity Graph -->
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Rohit11-OG&theme=react-dark&hide_border=true&area=true" width="90%"/>
 
 </div>
 
 ---
 
-## ✨ What is This Magic?
-
-**STL Vision PathPlanner** is a complete pipeline that:
-
-1. 📦 Takes your **3D STL model** (CAD file)
-2. 🎨 Generates **synthetic training images** with augmentation
-3. 🧠 Trains a **YOLOv8 AI model** to detect your object
-4. 📷 Runs **real-time detection** with Intel RealSense camera
-5. 🛤️ Generates **robotic tool paths** around detected objects
-6. 🤖 Exports **ROS2-compatible YAML** for robot control
-
-> 💡 **No manual labeling required!** The system auto-generates labeled training data from your 3D model.
-
----
-
-## 🎬 Demo
-
 <div align="center">
 
-| Detection | Path Visualization |
-|:---------:|:------------------:|
-| ![Detection](https://via.placeholder.com/400x300/1a1a2e/00ff00?text=Real-Time+Detection) | ![Path](https://via.placeholder.com/400x300/1a1a2e/ff6600?text=Tool+Path+Overlay) |
+## ⚡ LIGHTNING FAST PIPELINE ⚡
+
+```
+    ╔══════════════════════════════════════════════════════════════╗
+    ║  📦 STL  ──▶  🎨 TRAIN  ──▶  👁️ DETECT  ──▶  🛤️ PATH  ──▶  🤖 ROBOT  ║
+    ╚══════════════════════════════════════════════════════════════╝
+```
 
 </div>
 
 ---
 
-## 🔥 Features
+## � WHAT MAKES THIS INSANE?
 
-### 🎯 Core Capabilities
+<table>
+<tr>
+<td width="50%">
 
-| Feature | Description |
-|:-------:|:------------|
-| 🏭 **Synthetic Data Generation** | Auto-generate thousands of training images from STL |
-| 🧠 **YOLO Training Pipeline** | One-command training with augmentation |
-| 📷 **RealSense Integration** | 3D coordinates + orientation from depth |
-| 🛤️ **6 Path Strategies** | Contour, Spiral, Zigzag, Surface, Grid, Approach |
-| 🔴 **Collision Avoidance** | Depth-based obstacle detection |
-| 📝 **ROS2 Ready** | PoseStamped YAML with quaternions |
-
-### 🎮 Interactive Controls
-
-```
-┌─────────────────────────────────────────┐
-│  🎮 KEYBOARD CONTROLS                   │
-├─────────────────────────────────────────┤
-│  p     →  Generate tool path            │
-│  1-6   →  Switch strategy instantly     │
-│  v     →  Toggle path visualization     │
-│  r     →  Reload settings.yaml          │
-│  s     →  Save frame                    │
-│  +/-   →  Adjust confidence             │
-│  q     →  Quit                          │
-└─────────────────────────────────────────┘
+### � Zero Manual Labeling
+```diff
++ Auto-generates training data from STL
++ No tedious bounding box annotation
++ 500+ synthetic images in seconds
 ```
 
-### 🌀 Path Strategies
+</td>
+<td width="50%">
 
-| # | Strategy | Pattern | Best For |
-|:-:|:--------:|:-------:|:---------|
-| 1 | `contour` | 🔵 Elliptical | Inspection, Welding |
-| 2 | `approach` | 📍 Pick-place | Grasping |
-| 3 | `grid` | ▦ Raster | Scanning, Coating |
-| 4 | `surface` | 🌊 Depth-aware | Complex surfaces |
-| 5 | `spiral` | 🌀 Inward/Out | Polishing |
-| 6 | `zigzag` | ⚡ Back-forth | Coverage |
+### 🎯 6 Path Strategies
+```diff
+! Contour  → Inspection/Welding
+! Spiral   → Polishing/Coating
+! Zigzag   → Full Coverage
+! Surface  → Depth-Aware
+! Grid     → Scanning
+! Approach → Pick & Place
+```
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 📦 Installation
+<div align="center">
 
-### Prerequisites
+## 🎮 KEYBOARD SHORTCUTS
 
-- Python 3.8+
-- Intel RealSense camera (optional, webcam works too)
-- NVIDIA GPU (recommended for training)
+<img src="https://img.shields.io/badge/P-Generate%20Path-00FF00?style=flat-square&labelColor=1a1a2e"/>
+<img src="https://img.shields.io/badge/1--6-Switch%20Strategy-FF6600?style=flat-square&labelColor=1a1a2e"/>
+<img src="https://img.shields.io/badge/V-Toggle%20Viz-00FFFF?style=flat-square&labelColor=1a1a2e"/>
+<img src="https://img.shields.io/badge/R-Reload%20Config-FF00FF?style=flat-square&labelColor=1a1a2e"/>
+<img src="https://img.shields.io/badge/S-Save%20Frame-FFFF00?style=flat-square&labelColor=1a1a2e"/>
+<img src="https://img.shields.io/badge/Q-Quit-FF0000?style=flat-square&labelColor=1a1a2e"/>
 
-### Quick Install
+</div>
+
+---
+
+## 🛠️ QUICK START
 
 ```bash
-# Clone the repository
+# 🔽 Clone the repo
 git clone https://github.com/Rohit11-OG/STL-Vision-Pathplanner-.git
 cd STL-Vision-Pathplanner-
 
-# Install dependencies
+# 📦 Install dependencies
 pip install -r requirements.txt
 
-# Verify installation
-python main.py info
-```
-
----
-
-## 🚀 Usage
-
-### 1️⃣ Full Pipeline (STL → Detection → Path)
-
-```bash
-# Generate data, train model, run detection
+# 🚀 Full pipeline: STL → Train → Detect → Path
 python main.py full --stl your_object.stl --epochs 50
-```
 
-### 2️⃣ Step-by-Step
-
-```bash
-# Generate synthetic training data
-python main.py generate --stl bottle.stl --num-images 500
-
-# Train the detector
-python main.py train --epochs 100
-
-# Run real-time detection with path generation
+# 🎯 Or run path generation directly
 python main.py path --strategy spiral --camera 0
 ```
 
-### 3️⃣ Configuration
+---
 
-Edit `settings.yaml` for custom settings:
+## 🌀 PATH STRATEGIES
 
-```yaml
-detection:
-  confidence: 0.65
+<div align="center">
 
-path_planning:
-  strategy: contour
-  num_waypoints: 20
-  velocity: 0.1  # m/s
+| Strategy | Visual | Use Case |
+|:--------:|:------:|:---------|
+| **Contour** | 🔵⭕ | Inspection, Welding edges |
+| **Spiral** | 🌀 | Polishing, Painting inward |
+| **Zigzag** | ⚡ | Complete surface coverage |
+| **Surface** | 🌊 | Following 3D depth contours |
+| **Grid** | ▦ | Scanning, Uniform coating |
+| **Approach** | 📍 | Pick and place operations |
 
-visualization:
-  show_path: true
+</div>
+
+---
+
+## 📁 PROJECT STRUCTURE
+
+```
+🗂️ STL-Vision-Pathplanner/
+├── 🎯 main.py                 # CLI entry point
+├── 🧠 train_detector.py       # YOLO training pipeline
+├── 📷 realtime_detector.py    # Live detection + visualization
+├── 🛤️ tool_path_planner.py    # Path generation engine
+├── 🎨 data_generator.py       # Synthetic data from STL
+├── ⚙️ config.py               # System configuration
+├── 📝 settings.yaml           # User-editable settings
+├── 🤖 ros2_path_publisher.py  # ROS2 integration node
+└── 📦 stl_detector_ros2/      # Full ROS2 package
 ```
 
 ---
 
-## 🛤️ Tool Path Output
+## 🤖 ROS2 INTEGRATION
 
-Generated paths are saved as ROS-compatible YAML:
+<div align="center">
+
+```yaml
+# 📡 Topics Published
+/tool_path          → nav_msgs/Path
+/detections         → DetectionArray
+
+# 🔧 Services Available
+/publish_latest_path → std_srvs/Trigger
+```
+
+</div>
+
+```bash
+# Launch the detection node
+ros2 launch stl_detector_ros2 detection.launch.py
+
+# Echo the path topic
+ros2 topic echo /tool_path
+```
+
+---
+
+## � OUTPUT FORMAT
 
 ```yaml
 header:
   frame_id: "camera_link"
-  
+  stamp: "2026-01-29T18:00:00"
+
 path:
   waypoints:
     - pose:
@@ -171,107 +178,48 @@ path:
 
 ---
 
-## 🤖 ROS2 Integration
-
-### Launch Detection Node
-
-```bash
-ros2 launch stl_detector_ros2 detection.launch.py
-```
-
-### Topics
-
-| Topic | Type | Description |
-|:------|:-----|:------------|
-| `/tool_path` | nav_msgs/Path | Generated path |
-| `/detections` | DetectionArray | Object detections |
-
-### Publish Path Service
-
-```bash
-ros2 service call /publish_latest_path std_srvs/srv/Trigger
-```
-
----
-
-## 📁 Project Structure
-
-```
-STL-Vision-Pathplanner/
-├── 🎯 main.py                 # CLI entry point
-├── 🧠 train_detector.py       # YOLO training
-├── 📷 realtime_detector.py    # Detection + visualization
-├── 🛤️ tool_path_planner.py    # Path generation
-├── 🎨 data_generator.py       # Synthetic data
-├── ⚙️ config.py               # Configuration
-├── 📝 settings.yaml           # User settings
-├── 🤖 ros2_path_publisher.py  # ROS2 node
-└── 📦 stl_detector_ros2/      # ROS2 package
-```
-
----
-
-## 🎯 Workflow
-
-```mermaid
-graph LR
-    A[📦 STL Model] --> B[🎨 Synthetic Images]
-    B --> C[🧠 YOLO Training]
-    C --> D[📷 Real-time Detection]
-    D --> E[🛤️ Path Generation]
-    E --> F[🤖 Robot Execution]
-```
-
----
-
-## 🛠️ Tech Stack
-
 <div align="center">
 
-| Technology | Purpose |
-|:----------:|:--------|
-| 🐍 Python | Core language |
-| 🔥 PyTorch | Deep learning |
-| 👁️ YOLOv8 | Object detection |
-| 📸 OpenCV | Image processing |
-| 📷 RealSense | 3D camera |
-| 🤖 ROS2 | Robot integration |
-| 🎨 Trimesh | STL processing |
+## 🛠️ TECH STACK
+
+<p>
+<img src="https://skillicons.dev/icons?i=python,pytorch,opencv,ros,linux,git,vscode&theme=dark" />
+</p>
 
 </div>
 
 ---
 
-## 🤝 Contributing
+## 🤝 CONTRIBUTING
 
-Contributions are welcome! 
+<div align="center">
+
+```
+   🍴 Fork  →  🌿 Branch  →  💻 Code  →  📤 PR  →  🎉 Merge!
+```
+
+</div>
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- [Ultralytics](https://ultralytics.com/) for YOLOv8
-- [Intel RealSense](https://www.intelrealsense.com/) for depth sensing
-- [ROS2](https://ros.org/) community
+2. Create feature branch: `git checkout -b feature/AwesomeFeature`
+3. Commit changes: `git commit -m '✨ Add AwesomeFeature'`
+4. Push: `git push origin feature/AwesomeFeature`
+5. Open Pull Request
 
 ---
 
 <div align="center">
 
-### ⭐ Star this repo if you find it useful!
+## ⭐ STAR THIS REPO IF YOU FIND IT USEFUL!
 
-Made with ❤️ by [Rohit](https://github.com/Rohit11-OG)
+<img src="https://img.shields.io/github/stars/Rohit11-OG/STL-Vision-Pathplanner-?style=social"/>
+<img src="https://img.shields.io/github/forks/Rohit11-OG/STL-Vision-Pathplanner-?style=social"/>
+<img src="https://img.shields.io/github/watchers/Rohit11-OG/STL-Vision-Pathplanner-?style=social"/>
+
+---
+
+### Made with ❤️ and ☕ by [Rohit](https://github.com/Rohit11-OG)
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer"/>
 
 </div>
